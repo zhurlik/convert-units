@@ -53,7 +53,7 @@
 
 <p>Jump from imperial to metric units the same way:</p>
 
-<div class="highlight highlight-js"><pre><span class="nx">convert</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nx">from</span><span class="p">(</span><span class="s1">'lb'</span><span class="p">).</span><span class="nx">to</span><span class="p">(</span><span class="s1">'kg'</span><span class="p">);</span>
+<div class="highlight highlight-js"><pre><span class="nx">convert</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nx">from</span><span class="p">(</span><span class="s1">'lb'</span><span class="p">).</span><span class="nx">to</span><span class="p">(</span><span class="s1">'kg'</span><span class="p">)</span>
 <span class="c1">// 0.4536... (tested to 4 significant figures)</span>
 </pre></div>
 
@@ -65,10 +65,10 @@
 
 <p>If you ever want to know the possible conversions for a unit, just use <code>.possibilities</code></p>
 
-<div class="highlight highlight-js"><pre><span class="nx">convert</span><span class="p">().</span><span class="nx">from</span><span class="p">(</span><span class="s1">'ltr'</span><span class="p">).</span><span class="nx">possibilities</span><span class="p">();</span>
+<div class="highlight highlight-js"><pre><span class="nx">convert</span><span class="p">().</span><span class="nx">from</span><span class="p">(</span><span class="s1">'ltr'</span><span class="p">).</span><span class="nx">possibilities</span><span class="p">()</span>
 <span class="c1">// [ 'ml', 'ltr', 'tsp', 'tbsp', 'fl-oz', 'cup', 'pnt', 'qt', 'gal' ]</span>
 
-<span class="nx">convert</span><span class="p">().</span><span class="nx">from</span><span class="p">(</span><span class="s1">'kg'</span><span class="p">).</span><span class="nx">possibilities</span><span class="p">();</span>
+<span class="nx">convert</span><span class="p">().</span><span class="nx">from</span><span class="p">(</span><span class="s1">'kg'</span><span class="p">).</span><span class="nx">possibilities</span><span class="p">()</span>
 <span class="c1">// [ 'mcg', 'mg', 'g', 'kg', 'oz', 'lb' ]</span>
 </pre></div>
 
