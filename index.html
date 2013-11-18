@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Convert-units by ben-ng</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Convert-units</h1>
+          <h2>An elegant way to convert quantities between different units</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/ben-ng/convert-units/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/ben-ng/convert-units/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/ben-ng/convert-units" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a name="convert-units" class="anchor" href="#convert-units"><span class="octicon octicon-link"></span></a>convert-units</h1>
+
+<p><a href="https://travis-ci.org/ben-ng/convert-units"><img src="https://travis-ci.org/ben-ng/convert-units.png" alt="Build Status"></a></p>
+
+<p>A handy utility for converting between quantities in different units.</p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p><code>convert-units</code> has a simple chained API that is easy to read.</p>
+
+<p>Here's how you move between the metric units for volume:</p>
+
+<div class="highlight highlight-js"><pre><span class="kd">var</span> <span class="nx">convert</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'convert-units'</span><span class="p">);</span>
+
+<span class="nx">convert</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nx">from</span><span class="p">(</span><span class="s1">'ltr'</span><span class="p">).</span><span class="nx">to</span><span class="p">(</span><span class="s1">'ml'</span><span class="p">)</span>
+<span class="c1">// 1000</span>
+</pre></div>
+
+<p>Jump from imperial to metric units the same way:</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">convert</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nx">from</span><span class="p">(</span><span class="s1">'lb'</span><span class="p">).</span><span class="nx">to</span><span class="p">(</span><span class="s1">'kg'</span><span class="p">);</span>
+<span class="c1">// 0.4536... (tested to 4 significant figures)</span>
+</pre></div>
+
+<p>Just be careful not to ask for an impossible conversion:</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">convert</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nx">from</span><span class="p">(</span><span class="s1">'oz'</span><span class="p">).</span><span class="nx">to</span><span class="p">(</span><span class="s1">'fl-oz'</span><span class="p">)</span>
+<span class="c1">// throws -- you can't go from mass to volume!</span>
+</pre></div>
+
+<p>If you ever want to know the possible conversions for a unit, just use <code>.possibilities</code></p>
+
+<div class="highlight highlight-js"><pre><span class="nx">convert</span><span class="p">().</span><span class="nx">from</span><span class="p">(</span><span class="s1">'ltr'</span><span class="p">).</span><span class="nx">possibilities</span><span class="p">();</span>
+<span class="c1">// [ 'ml', 'ltr', 'tsp', 'tbsp', 'fl-oz', 'cup', 'pnt', 'qt', 'gal' ]</span>
+
+<span class="nx">convert</span><span class="p">().</span><span class="nx">from</span><span class="p">(</span><span class="s1">'kg'</span><span class="p">).</span><span class="nx">possibilities</span><span class="p">();</span>
+<span class="c1">// [ 'mcg', 'mg', 'g', 'kg', 'oz', 'lb' ]</span>
+</pre></div>
+
+<p>To get a detailed description of a unit, use <code>describe</code></p>
+
+<pre><code>convert().describe('kg')
+/*
+  {
+    measure: 'mass'
+  , system: 'metric'
+  , singular: 'Kilogram'
+  , plural: 'Kilograms'
+  }
+*/
+</code></pre>
+
+<h2>
+<a name="supported-units" class="anchor" href="#supported-units"><span class="octicon octicon-link"></span></a>Supported Units</h2>
+
+<h3>
+<a name="volume" class="anchor" href="#volume"><span class="octicon octicon-link"></span></a>Volume</h3>
+
+<ul>
+<li>ml</li>
+<li>ltr</li>
+<li>tsp</li>
+<li>tbsp</li>
+<li>fl-oz</li>
+<li>cup</li>
+<li>pnt</li>
+<li>qt</li>
+<li>gal</li>
+</ul><h3>
+<a name="mass" class="anchor" href="#mass"><span class="octicon octicon-link"></span></a>Mass</h3>
+
+<ul>
+<li>mcg</li>
+<li>mg</li>
+<li>g</li>
+<li>kg</li>
+<li>oz</li>
+<li>lb</li>
+</ul><h3>
+<a name="want-more" class="anchor" href="#want-more"><span class="octicon octicon-link"></span></a>Want More?</h3>
+
+<p>Adding new measurement sets is easy. Take a look at <code>lib/masses.js</code> and <code>lib/volumes.js</code> to see how it's done.</p>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Copyright (c) 2013 Ben Ng, <a href="http://benng.me">http://benng.me</a></p>
+
+<p>Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.</p>
+        </section>
+
+        <footer>
+          Convert-units is maintained by <a href="https://github.com/ben-ng">ben-ng</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
