@@ -9,7 +9,7 @@ Installation
 -----
 
 ```
-npm install convert-units --save
+npm i @bstoots/convert-units
 ```
 
 Usage
