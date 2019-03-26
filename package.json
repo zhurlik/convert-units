@@ -1,5 +1,5 @@
 {
-  "name": "convert-units",
+  "name": "@bstoots/convert-units",
   "version": "3.0.0",
   "description": "Convert between quantities in different units",
   "main": "lib",
@@ -26,5 +26,13 @@
   "contributors": [
     "Ben Ng <me@benng.me> (http://benng.me)"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bstoots/convert-units/issues"
+  },
+  "homepage": "https://github.com/bstoots/convert-units#readme",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  }
 }
