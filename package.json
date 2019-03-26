@@ -1,22 +1,19 @@
 {
   "name": "convert-units",
-  "version": "2.3.4",
+  "version": "3.0.0",
   "description": "Convert between quantities in different units",
   "main": "lib",
-  "dependencies": {
-    "lodash.keys": "2.3.x",
-    "lodash.foreach": "2.3.x"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "assert-diff": "^1.1.0",
-    "jake": "8.0.12"
+    "assert-diff": "^2.0.3",
+    "jake": "^8.1.1"
   },
   "scripts": {
     "test": "jake test --trace"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/ben-ng/convert-units.git"
+    "url": "git://github.com/bstoots/convert-units.git"
   },
   "keywords": [
     "metric",
@@ -25,6 +22,9 @@
     "ratio",
     "fraction"
   ],
-  "author": "Ben Ng <me@benng.me> (http://benng.me)",
+  "author": "Brian Stoots <brian@stoots.me> (https://brian.stoots.me)",
+  "contributors": [
+    "Ben Ng <me@benng.me> (http://benng.me)"
+  ],
   "license": "MIT"
 }
