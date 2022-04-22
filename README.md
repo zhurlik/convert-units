@@ -286,6 +286,10 @@ Supported Units
 * MiB
 * GiB
 * TiB
+* PiB
+* EiB
+* ZiB
+* YiB
 
 ### Digital (Decimal)
 * b
@@ -298,6 +302,10 @@ Supported Units
 * MB
 * GB
 * TB
+* PB
+* EB
+* ZB
+* YB
 
 ### Illuminance
 * lx
