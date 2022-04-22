@@ -66,13 +66,13 @@ tests['time possibilities'] = function () {
 
 tests['digitalBin possibilities'] = function() {
   var actual = convert().possibilities('digitalBin')
-    , expected = [ 'ib', 'Kib', 'Mib', 'Gib', 'Tib', 'iB', 'KiB', 'MiB', 'GiB', 'TiB' ];
+    , expected = [ 'ib', 'Kib', 'Mib', 'Gib', 'Tib', 'Pib', 'Eib', 'Zib', 'Yib', 'iB', 'KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB' ];
   assert.deepEqual(actual.sort(), expected.sort());
 };
 
 tests['digitalDec possibilities'] = function() {
   var actual = convert().possibilities('digitalDec')
-    , expected = [ 'b', 'Kb', 'Mb', 'Gb', 'Tb', 'B', 'KB', 'MB', 'GB', 'TB' ];
+    , expected = [ 'b', 'Kb', 'Mb', 'Gb', 'Tb', 'Pb', 'Eb', 'Zb', 'Yb', 'B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB' ];
   assert.deepEqual(actual.sort(), expected.sort());
 };
 
@@ -187,6 +187,10 @@ tests['all possibilities'] = function () {
       , 'arcsec'
       , 'B'
       , 'C'
+      , 'EB'
+      , 'Eb'
+      , 'EiB'
+      , 'Eib'
       , 'F'
       , 'R'
       , 'GB'
@@ -198,7 +202,11 @@ tests['all possibilities'] = function () {
       , 'MPa'
       , 'Mb'
       , 'N'
+      , 'PB'
       , 'Pa'
+      , 'Pb'
+      , 'PiB'
+      , 'Pib'
       , 'TB'
       , 'Tb'
       , 'ac'
@@ -371,6 +379,14 @@ tests['all possibilities'] = function () {
       , 'W'
       , 'week'
       , 'Wh'
+      , 'YB'
+      , 'Yb'
+      , 'YiB'
+      , 'Yib'
+      , 'ZB'
+      , 'Zb'
+      , 'ZiB'
+      , 'Zib'
       , 'yd'
       , 'yd2'
       , 'yd3'

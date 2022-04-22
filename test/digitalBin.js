@@ -25,6 +25,22 @@ tests['Tb to b'] = function () {
   assert.strictEqual( convert(1).from('Tib').to('ib') , 1099511627776);
 };
 
+tests['Pb to b'] = function () {
+  assert.strictEqual( convert(1).from('Pib').to('ib') , 1125899906842624);
+};
+
+tests['Eb to b'] = function () {
+  assert.strictEqual( convert(1).from('Eib').to('ib') , 1152921504606846976);
+};
+
+tests['Zb to b'] = function () {
+  assert.strictEqual( convert(1).from('Zib').to('ib') , 1180591620717411303424);
+};
+
+tests['Yb to b'] = function () {
+  assert.strictEqual( convert(1).from('Yib').to('ib') , 1208925819614629174706176);
+};
+
 tests['B to B'] = function () {
   assert.strictEqual( convert(1).from('iB').to('iB') , 1);
 };
@@ -43,6 +59,22 @@ tests['GB to B'] = function () {
 
 tests['TB to B'] = function () {
   assert.strictEqual( convert(1).from('TiB').to('iB') , 1099511627776);
+};
+
+tests['PB to B'] = function () {
+  assert.strictEqual( convert(1).from('PiB').to('iB') , 1125899906842624);
+};
+
+tests['EB to B'] = function () {
+  assert.strictEqual( convert(1).from('EiB').to('iB') , 1152921504606846976);
+};
+
+tests['ZB to B'] = function () {
+  assert.strictEqual( convert(1).from('ZiB').to('iB') , 1180591620717411303424);
+};
+
+tests['YB to B'] = function () {
+  assert.strictEqual( convert(1).from('YiB').to('iB') , 1208925819614629174706176);
 };
 
 // When converting between systems, expect < 0.1% error
